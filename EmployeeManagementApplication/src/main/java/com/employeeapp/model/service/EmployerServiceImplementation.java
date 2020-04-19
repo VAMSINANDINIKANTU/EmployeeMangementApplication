@@ -12,7 +12,7 @@ import com.employeeapp.model.repository.EmployerRepository;
 public class EmployerServiceImplementation implements EmployerService{
 	@Autowired
 	private  EmployerRepository repo;
-    @Override
+        @Override
 	public List<Employer> findAll() {
 		return repo.findAll();
 	}
