@@ -29,13 +29,13 @@ public class EmployeeRestController {
 	}
 
     @GetMapping(path = "/employee/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Employee> getAnBook(@PathVariable(name = "id") Long id) {
+	public ResponseEntity<Employee> getAnEmployee(@PathVariable(name = "id") Long id) {
 		Employee employee = employeeservice.findEmployeeById(id).orElseThrow(EmployerNotFoundException::new);
 		return new ResponseEntity<Employee>(employee, HttpStatus.OK);
 	}
 	
     @GetMapping(path="/employee/limit/{salary}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Employee>> getByPriceLimit(@PathVariable(name="salary")double salary){
+	public ResponseEntity<List<Employee>> getBySalaryLimit(@PathVariable(name="salary")double salary){
 		return new ResponseEntity<List<Employee>>(employeeservice.salaryLimit(salary),HttpStatus.OK);
 	}
 	
