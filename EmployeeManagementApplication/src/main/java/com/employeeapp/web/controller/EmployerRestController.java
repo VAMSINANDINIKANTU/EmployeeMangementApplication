@@ -16,7 +16,7 @@ import com.employeeapp.model.service.EmployerService;
 @RequestMapping(path = "/myapi")
 public class EmployerRestController {
 	private EmployerService employerservice;
-    @Autowired
+        @Autowired
 	public EmployerRestController(EmployerService employerservice) {
 		super();
 		this.employerservice = employerservice;
@@ -31,11 +31,11 @@ public class EmployerRestController {
 	public ResponseEntity<Employer> getAnBook(@PathVariable(name = "id") Long id) {
 		Employer employer = employerservice.findEmployerById(id).orElseThrow(EmployerNotFoundException::new);
 		return new ResponseEntity<Employer>(employer, HttpStatus.OK);
-    }
+       }
 	
 	@GetMapping(path = "/employerName/{employerName}", produces = MediaType.APPLICATION_JSON_VALUE) 
 	public ResponseEntity<Employer>getAnEmployer(@PathVariable(name = "employerName") String employerName) {
 	    Employer employer =employerservice.findByemployerName(employerName).orElseThrow(EmployerNotFoundException::new); 
 	    return new ResponseEntity<Employer>(employer, HttpStatus.OK);
-	}
+       }
 }
