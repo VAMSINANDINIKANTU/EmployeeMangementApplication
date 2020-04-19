@@ -28,7 +28,7 @@ public class EmployerRestController {
 	}
 
 	@GetMapping(path = "/employer/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Employer> getAnBook(@PathVariable(name = "id") Long id) {
+	public ResponseEntity<Employer> getAnEmployer(@PathVariable(name = "id") Long id) {
 		Employer employer = employerservice.findEmployerById(id).orElseThrow(EmployerNotFoundException::new);
 		return new ResponseEntity<Employer>(employer, HttpStatus.OK);
        }
