@@ -25,7 +25,7 @@ public class EmployeeServiceImplementation implements EmployeeService{
     @Override
 	public List<Employee> salaryLimit(double salary) {
 		for(Employee e:findAll()) {
-			if(e.getSalary()<salary) {
+			if(e.getSalary()>salary) {
 				limitSalary.add(e);
 			}
 		}
