@@ -20,13 +20,13 @@ public class Employer {
 	private String address;
 	@OneToMany(mappedBy = "employer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Employee> Employees = new ArrayList<>();
-    public List<Employee> getEmployees() {
+        public List<Employee> getEmployees() {
 		return Employees;
 	}
-    public void setEmployees(List<Employee> employees) {
+        public void setEmployees(List<Employee> employees) {
 		this.Employees = employees;
 	}
-    public Long getId() {
+        public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
@@ -41,18 +41,17 @@ public class Employer {
 	public String getAddress() {
 		return address;
 	}
-    public void setAddress(String address) {
+        public void setAddress(String address) {
 		this.address = address;
 	}
-   
-    public Employer() {
+        public Employer() {
 		super();
 	}
-    public void addEmployee(Employee employee) {
+        public void addEmployee(Employee employee) {
 		Employees.add(employee);
 		employee.setEmployer(this);
 	}
-    @Override
+        @Override
 	public String toString() {
 		return "Employer [employerName=" + employerName + ", address=" + address + "]";
 	}
@@ -60,6 +59,5 @@ public class Employer {
 		super();
 		this.employerName = employerName;
 		this.address = address;
-		
 	}
 }
