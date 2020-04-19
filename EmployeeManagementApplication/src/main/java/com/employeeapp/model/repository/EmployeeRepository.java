@@ -7,7 +7,7 @@ import com.employeeapp.model.entities.Employee;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-	public List<Employee> findAll();
+    public List<Employee> findAll();
     public Optional<Employee> findEmployeeById(Long id);
     public Optional<Employee> findByfirstName(String firstName);
 }
